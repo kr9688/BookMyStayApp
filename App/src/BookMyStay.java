@@ -102,7 +102,6 @@ public class BookMyStay {
         System.out.println("Requests are stored in arrival order.");
         System.out.println("No inventory mutation occurs at this stage.\n");
 
-        // Display queued requests
         for (Reservation request : bookingRequestQueue) {
             System.out.println(request);
         }
@@ -110,9 +109,8 @@ public class BookMyStay {
         System.out.println("\n=== Processing Requests ===");
         System.out.println("Requests will be processed fairly in order of arrival.\n");
 
-        // Simulate processing requests
         while (!bookingRequestQueue.isEmpty()) {
-            Reservation nextRequest = bookingRequestQueue.poll(); // FIFO
+            Reservation nextRequest = bookingRequestQueue.poll();
             System.out.println("Processing: " + nextRequest);
         }
     }
