@@ -1,50 +1,101 @@
-// File: UseCase5BookingRequestQueue.java
-
 import java.util.LinkedList;
 import java.util.Queue;
 
-// Represents a guest's intent to book a room
-class reservation {
+// Guest class
+class Guest {
+    private String guestId;
     private String guestName;
 
-    public reservation(String guestName) {
+    public Guest(String guestId, String guestName) {
+        this.guestId = guestId;
         this.guestName = guestName;
+    }
+
+    public String getGuestId() {
+        return guestId;
     }
 
     public String getGuestName() {
         return guestName;
     }
+}
+
+// Reservation class
+class Reservation {
+    private String reservationId;
+    private Guest guest;
+    private String roomType;
+    private double bookingAmount;
+    private String allocatedRoomId;
+    private boolean cancelled;
+
+    public Reservation(String reservationId, Guest guest, String roomType,
+                       double bookingAmount, String allocatedRoomId) {
+        this.reservationId = reservationId;
+        this.guest = guest;
+        this.roomType = roomType;
+        this.bookingAmount = bookingAmount;
+        this.allocatedRoomId = allocatedRoomId;
+        this.cancelled = false;
+    }
+
+    public String getReservationId() {
+        return reservationId;
+    }
+
+    public Guest getGuest() {
+        return guest;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public double getBookingAmount() {
+        return bookingAmount;
+    }
+
+    public String getAllocatedRoomId() {
+        return allocatedRoomId;
+    }
+
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    public void cancel() {
+        this.cancelled = true;
+    }
 
     @Override
     public String toString() {
-        return "Reservation request from: " + guestName;
+        return reservationId + " | " + guest.getGuestName() + " | " + roomType +
+                " | RoomID: " + allocatedRoomId + " | Rs." + bookingAmount;
     }
 }
 
-// Main class to demonstrate booking request queue
+// Main class
 public class BookMyStay {
-
     public static void main(String[] args) {
+
         // Queue to store booking requests in FIFO order
         Queue<Reservation> bookingRequestQueue = new LinkedList<>();
 
         // Guests submit booking requests
-        Queue<Reservation> bookingRequestQueue = new LinkedList<>();
-
         bookingRequestQueue.add(
-                new Reservation("R1", new Guest("G1", "Alice"), "Deluxe", 3000)
+                new Reservation("R1", new Guest("G1", "Alice"), "Deluxe", 3000, "D101")
         );
 
         bookingRequestQueue.add(
-                new Reservation("R2", new Guest("G2", "Bob"), "Standard", 2000)
+                new Reservation("R2", new Guest("G2", "Bob"), "Standard", 2000, "S201")
         );
 
         bookingRequestQueue.add(
-                new Reservation("R3", new Guest("G3", "Charlie"), "Suite", 5000)
+                new Reservation("R3", new Guest("G3", "Charlie"), "Suite", 5000, "SU301")
         );
 
         bookingRequestQueue.add(
-                new Reservation("R4", new Guest("G4", "Diana"), "Deluxe", 3500)
+                new Reservation("R4", new Guest("G4", "Diana"), "Deluxe", 3500, "D102")
         );
 
         System.out.println("=== Booking Request Queue (FIFO) ===");
@@ -65,4 +116,4 @@ public class BookMyStay {
             System.out.println("Processing: " + nextRequest);
         }
     }
-}}
+}
