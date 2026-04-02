@@ -2,11 +2,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 // Guest class
-class Guest {
+class guest {
     private String guestId;
     private String guestName;
 
-    public Guest(String guestId, String guestName) {
+    public guest(String guestId, String guestName) {
         this.guestId = guestId;
         this.guestName = guestName;
     }
@@ -21,7 +21,7 @@ class Guest {
 }
 
 // Reservation class
-class Reservation {
+class reservation {
     private String reservationId;
     private Guest guest;
     private String roomType;
@@ -29,7 +29,7 @@ class Reservation {
     private String allocatedRoomId;
     private boolean cancelled;
 
-    public Reservation(String reservationId, Guest guest, String roomType,
+    public reservation(String reservationId, Guest guest, String roomType,
                        double bookingAmount, String allocatedRoomId) {
         this.reservationId = reservationId;
         this.guest = guest;

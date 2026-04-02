@@ -101,7 +101,7 @@ class InvalidBookingValidator {
 }
 
 // Hotel booking system
-class HotelBookingSystem {
+class hotelBookingSystem {
     private Map<String, Integer> roomInventory;
 
     public HotelBookingSystem() {
