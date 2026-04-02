@@ -1,11 +1,11 @@
 import java.util.*;
 
 // Represents a guest
-class Guest {
+class guest {
     private String guestId;
     private String guestName;
 
-    public Guest(String guestId, String guestName) {
+    public guest(String guestId, String guestName) {
         this.guestId = guestId;
         this.guestName = guestName;
     }
@@ -25,13 +25,13 @@ class Guest {
 }
 
 // Represents a reservation
-class Reservation {
+class reservation {
     private String reservationId;
     private Guest guest;
     private String roomType;
     private double bookingAmount;
 
-    public Reservation(String reservationId, Guest guest, String roomType, double bookingAmount) {
+    public reservation(String reservationId, Guest guest, String roomType, double bookingAmount) {
         this.reservationId = reservationId;
         this.guest = guest;
         this.roomType = roomType;
