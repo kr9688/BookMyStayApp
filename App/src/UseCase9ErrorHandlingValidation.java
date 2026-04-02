@@ -28,7 +28,7 @@ class Guest {
 }
 
 // Reservation class
-class Reservation {
+class reservation {
     private String reservationId;
     private Guest guest;
     private String roomType;
