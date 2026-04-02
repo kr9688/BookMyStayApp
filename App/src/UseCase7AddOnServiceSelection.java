@@ -23,7 +23,7 @@ class Service {
     }
 }
 
-public class UseCase7AddOnServiceSelection {
+public class UseCaseAddOnServiceSelection {
 
     // Map reservation ID -> list of services
     private Map<String, List<Service>> reservationServices = new HashMap<>();
@@ -65,7 +65,7 @@ public class UseCase7AddOnServiceSelection {
 
     // Main driver
     public static void main(String[] args) {
-        UseCase7AddOnServiceSelection manager = new UseCase7AddOnServiceSelection();
+        UC7 manager = new UC7();
 
         // Example reservation IDs (these would normally come from UC6 allocations)
         String reservation1 = "RES-101";
